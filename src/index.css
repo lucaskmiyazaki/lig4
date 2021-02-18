@@ -1,13 +1,288 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+html {
+  background-image: url("playground.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.body{
+  font-family: Schoolbell;
 }
+
+
+.square-blank, .square-p1, .square-p2, .square-p1-high, .square-p2-high {
+  border-radius: 18px;
+  height: 34px;
+  width: 34px;
+  margin-top: 10px;
+  border-color: #303030;
+  display: block;
+  float: none;
+  outline: none;
+}
+
+.square-blank {
+  background: #f0ede5;
+}
+
+.square-p1 {
+  background: #F26B5B;
+}
+
+.square-p2 {
+  background: #81CC45;
+}
+
+.square-p1-high {
+  background: #F26B5B;
+  animation-duration: 200ms;
+  animation-name: blink-red;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  -webkit-animation: blink-red 200ms alternate infinite; /* Safari and Chrome */
+}
+
+
+.square-p2-high {
+  background: #81CC45;
+  animation-duration: 200ms;
+  animation-name: blink-green;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  -webkit-animation: blink-green 200ms alternate infinite; /* Safari and Chrome */
+}
+
+@keyframes blink-green {
+  from {
+   background-color: #81CC45;
+  }
+  to {
+   background-color: yellow;
+  }
+}
+
+@-webkit-keyframes blink-green {
+ from {
+   background-color: #81CC45;
+ }
+ to {
+   background-color: yellow;
+ }
+}
+
+@keyframes blink-red {
+  from {
+   background-color: #F26B5B;
+  }
+  to {
+   background-color: yellow;
+  }
+}
+
+@-webkit-keyframes blink-red {
+ from {
+   background-color: #F26B5B;
+ }
+ to {
+   background-color: yellow;
+ }
+}
+
+
+.board-row {
+  display: block;
+  float: left;
+  margin-right: 2.5px;
+  margin-left: 2.5px;
+}
+
+.board-row:hover {
+  margin-right: 3px;
+  margin-left: 2px;
+}
+
+.board-row:active {
+  margin-right: 2px;
+  margin-left: 3px;
+}
+
+.game-board{
+  font-family: Schoolbell;
+  font-size: 24px;
+  background-color: #F5DF4D;
+  color: #303030;
+  border: 1px solid #F5DF4D;
+  border-radius: 15px;
+  height: 308px;
+  width: 308px;
+  padding: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px;
+  box-shadow: 3px 3px 2px 1px darkgrey;
+  display: block;
+}
+
+.main-menu{
+  height: auto;
+  width: auto;
+}
+
+.menu-button{
+  font-family: Schoolbell;
+  font-size: 24px;
+  color: #303030;
+  display: block;
+  float:none;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  background-color: #F5DF4D;
+  border: 1px solid #F5DF4D;
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px 1px darkgrey;
+  outline: none;
+}
+
+.menu-button:hover{
+  font-size: 26px;
+  color: #F26B5B;
+  transition: font-size 0.2s;
+}
+
+.menu-button:active{
+  font-size: 22px;
+  transition: font-size 0.1s;
+}
+
+.game-buttons{
+  display: flex;
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.select-box{
+  font-family: Schoolbell;
+  font-size: 24px;
+  color:  #303030;
+  justify-content: center;
+  display: flex;
+  margin-bottom: 50px;
+}
+
+.category-to-select{
+  width: 250px;
+}
+
+.selected-item{
+  background-color: #F5DF4D;
+  border-radius: 10px;
+  width: 90px;
+  text-align: center;
+}
+
+
+.left-select-button{
+  background-color: transparent;
+  width: 0; 
+  height: 0; 
+  border-top:    20px solid transparent;
+  border-bottom: 20px solid transparent;
+  border-right:  20px solid #F5DF4D;
+  border-left:   20px solid transparent;
+  border-radius: 5px;
+  margin-right: 14px;
+  outline: none;
+}
+
+.left-select-button:hover{
+  border-top:    24px solid transparent;
+  border-bottom: 24px solid transparent;
+  border-right:  24px solid #F26B5B;
+  border-left:   24px solid transparent;
+  margin-right: 6px;
+  margin-bottom: -8px;
+  transition: border-top 0.2s, color 0.2s;
+}
+
+.left-select-button:active{
+  border-top:    18px solid transparent;
+  border-bottom: 18px solid transparent;
+  border-right:  18px solid #F5DF4D;
+  border-left:   18px solid transparent;
+  margin-right: 16px;
+  margin-bottom: -2px;
+  transition: border-top 0.2s, color 0.2s;
+}
+
+.right-select-button{
+  background-color: transparent;
+  width: 0; 
+  height: 0; 
+  border-top:    20px solid transparent;
+  border-bottom: 20px solid transparent;
+  border-right:  20px solid transparent;
+  border-left:   20px solid #F5DF4D;
+  border-radius: 5px;
+  margin-left: 14px;
+  outline: none;
+}
+
+.right-select-button:hover{
+  border-top:    24px solid transparent;
+  border-bottom: 24px solid transparent;
+  border-right:  24px solid transparent;
+  border-left:   24px solid #F26B5B;
+  margin-left: 6px;
+  margin-bottom: -8px;
+  transition: border-top 0.2s, color 0.2s;
+}
+
+.right-select-button:active{
+  border-top:    18px solid transparent;
+  border-bottom: 18px solid transparent;
+  border-right:  18px solid transparent;
+  border-left:   18px solid #F5DF4D;
+  margin-left: 16px;
+  margin-bottom: -2px;
+  transition: border-top 0.2s, color 0.2s;
+}
+
+.title{
+  font-family: Schoolbell;
+  font-size: 70px;
+  display: flex;
+}
+
+.title1{
+  color:  #F26B5B;
+}
+
+.title2{
+  color: #F5DF4D;
+}
+
+.title3{
+  color:#303030;
+}
+
+.title4{
+  color: #303030;
+}
+
+.title5{
+  color: #A2B8D4;
+}
+
+.title6{
+  color: #F26B5B;
+}
+
+.title7{
+  color:  #81CC45;
+}
+
+.title8{
+  color: #F5DF4D;
+}
+
