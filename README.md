@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# Connect 4
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -7,6 +7,14 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 enter the project folder and 
 
 ### `npm install`
+
+run the python server
+
+### `python3 server.py`
+
+start the dev environment
+
+### `yarn start`
 
 ## Available Scripts
 
